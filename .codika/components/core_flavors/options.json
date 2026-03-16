@@ -1,0 +1,1 @@
+{"project_name":"product_catalog","environments":["dev","prod","stag"],"app_name":"Product Catalog","ios_bundle_id":"dev.ogaroh.productCatalog","android_package_name":"dev.ogaroh.product_catalog"}
