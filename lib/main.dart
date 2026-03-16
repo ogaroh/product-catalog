@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:product_catalog/app.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter/services.dart';
+import 'core/cache/hive_service.dart';
 
 Future<void> runMainApp() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +14,8 @@ Future<void> runMainApp() async {
 
   ErrorWidget.builder = errorBuilderWidget;
 
-  // Add your initialization code here
+  // Initialise Hive local cache
+  await HiveService.instance.init();
 
   FlutterNativeSplash.remove();
 
