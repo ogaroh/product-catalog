@@ -6,10 +6,16 @@ abstract final class AppColors {
   // ──────────────────────────────────────────────────────────
   // Brand palette
   // ──────────────────────────────────────────────────────────
-  static const Color primary = Color(0xFF4F46E5);       // Indigo 600
-  static const Color primaryDark = Color(0xFF818CF8);   // Indigo 400 (dark mode)
-  static const Color secondary = Color(0xFF06B6D4);     // Cyan 500
-  static const Color secondaryDark = Color(0xFF22D3EE); // Cyan 400 (dark mode)
+  static const Color primary = Color(0xFF6366F1); // Vibrant indigo
+  static const Color primaryDark = Color(0xFFA5B4FC); // Soft indigo (dark mode)
+  static const Color secondary = Color(0xFF8B5CF6); // Rich violet
+  static const Color secondaryDark = Color(
+    0xFFC4B5FD,
+  ); // Soft violet (dark mode)
+
+  // Accent gradient anchors
+  static const Color accentStart = Color(0xFF6366F1); // Indigo
+  static const Color accentEnd = Color(0xFFEC4899); // Pink
 
   // ──────────────────────────────────────────────────────────
   // Semantic
@@ -22,26 +28,32 @@ abstract final class AppColors {
   // Discount badge
   static const Color discountBg = Color(0xFFEF4444);
   static const Color discountFg = Color(0xFFFFFFFF);
+  static const Color discountGradientStart = Color(0xFFEF4444);
+  static const Color discountGradientEnd = Color(0xFFEC4899);
 
   // ──────────────────────────────────────────────────────────
   // Light surface
   // ──────────────────────────────────────────────────────────
   static const Color surfaceLight = Color(0xFFFFFFFF);
-  static const Color surfaceVariantLight = Color(0xFFF3F4F6);
-  static const Color backgroundLight = Color(0xFFF9FAFB);
-  static const Color onSurfaceLight = Color(0xFF111827);
-  static const Color onSurfaceVariantLight = Color(0xFF6B7280);
-  static const Color borderLight = Color(0xFFE5E7EB);
+  static const Color surfaceVariantLight = Color(
+    0xFFF1F0FB,
+  ); // Light lavender tint
+  static const Color backgroundLight = Color(0xFFFAF9FE); // Subtle warm white
+  static const Color onSurfaceLight = Color(0xFF1E1B4B); // Deep indigo-black
+  static const Color onSurfaceVariantLight = Color(0xFF64748B); // Slate
+  static const Color borderLight = Color(0xFFE2E0F0); // Soft lavender border
 
   // ──────────────────────────────────────────────────────────
   // Dark surface
   // ──────────────────────────────────────────────────────────
-  static const Color surfaceDark = Color(0xFF1F2937);
-  static const Color surfaceVariantDark = Color(0xFF374151);
-  static const Color backgroundDark = Color(0xFF111827);
-  static const Color onSurfaceDark = Color(0xFFF9FAFB);
-  static const Color onSurfaceVariantDark = Color(0xFF9CA3AF);
-  static const Color borderDark = Color(0xFF374151);
+  static const Color surfaceDark = Color(0xFF1E1B2E); // Deep purple-black
+  static const Color surfaceVariantDark = Color(
+    0xFF2D2A42,
+  ); // Elevated purple-black
+  static const Color backgroundDark = Color(0xFF13111C); // True dark
+  static const Color onSurfaceDark = Color(0xFFF1F0FB);
+  static const Color onSurfaceVariantDark = Color(0xFFA3A1B6);
+  static const Color borderDark = Color(0xFF3B3852); // Subtle purple border
 
   // ──────────────────────────────────────────────────────────
   // Shimmer

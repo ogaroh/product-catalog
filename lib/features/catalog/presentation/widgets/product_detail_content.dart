@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/design_system/ds_exports.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../../l10n/l10n.dart';
 import '../blocs/product_detail/product_detail_cubit.dart';
@@ -39,20 +40,40 @@ class ProductDetailContent extends StatelessWidget {
                   heroTag: 'detail-hero-${product.id}',
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(AppSpacing.lg),
+                  padding: const EdgeInsets.all(AppSpacing.xl),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // Category chip
-                      Chip(
-                        label: Text(product.category),
-                        visualDensity: VisualDensity.compact,
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: AppSpacing.md,
+                          vertical: AppSpacing.xs,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Theme.of(
+                            context,
+                          ).colorScheme.primary.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(
+                            AppSpacing.chipRadius,
+                          ),
+                        ),
+                        child: Text(
+                          product.category.toUpperCase(),
+                          style: Theme.of(context).textTheme.labelSmall
+                              ?.copyWith(
+                                color: Theme.of(context).colorScheme.primary,
+                                fontWeight: FontWeight.w700,
+                                letterSpacing: 1.0,
+                              ),
+                        ),
                       ),
-                      const SizedBox(height: AppSpacing.sm),
+                      const SizedBox(height: AppSpacing.md),
                       // Title
                       Text(
                         product.title,
-                        style: Theme.of(context).textTheme.headlineMedium,
+                        style: Theme.of(context).textTheme.headlineMedium
+                            ?.copyWith(fontWeight: FontWeight.w800),
                       ),
                       const SizedBox(height: AppSpacing.xs),
                       // Brand
@@ -87,17 +108,35 @@ class ProductDetailContent extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: AppSpacing.sm),
-                      // Stock
-                      Text(
-                        context.l10n.stockLabel(product.stock),
-                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: product.stock > 0
-                                  ? null
-                                  : Theme.of(context).colorScheme.error,
-                            ),
+                      const SizedBox(height: AppSpacing.md),
+                      // Stock badge
+                      Row(
+                        children: [
+                          Icon(
+                            product.stock > 0
+                                ? Icons.check_circle_rounded
+                                : Icons.cancel_rounded,
+                            size: 16,
+                            color: product.stock > 0
+                                ? AppColors.success
+                                : Theme.of(context).colorScheme.error,
+                          ),
+                          const SizedBox(width: AppSpacing.xs),
+                          Text(
+                            context.l10n.stockLabel(product.stock),
+                            style: Theme.of(context).textTheme.bodySmall
+                                ?.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                  color: product.stock > 0
+                                      ? AppColors.success
+                                      : Theme.of(context).colorScheme.error,
+                                ),
+                          ),
+                        ],
                       ),
-                      const Divider(height: AppSpacing.xxl),
+                      const SizedBox(height: AppSpacing.xxl),
+                      const Divider(),
+                      const SizedBox(height: AppSpacing.lg),
                       // Description
                       Text(
                         product.description,

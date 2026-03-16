@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../../l10n/l10n.dart';
 
@@ -62,25 +63,37 @@ class _ImageGalleryState extends State<ImageGallery> {
             ),
           ),
           if (widget.images.length > 1) ...[
-            const SizedBox(height: AppSpacing.sm),
+            const SizedBox(height: AppSpacing.md),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
                 widget.images.length,
                 (i) => AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
+                  duration: const Duration(milliseconds: 250),
+                  curve: Curves.easeOutCubic,
                   margin: const EdgeInsets.symmetric(horizontal: 3),
-                  width: _current == i ? 20 : 8,
+                  width: _current == i ? 24 : 8,
                   height: 8,
                   decoration: BoxDecoration(
+                    gradient: _current == i
+                        ? const LinearGradient(
+                            colors: [
+                              AppColors.accentStart,
+                              AppColors.accentEnd,
+                            ],
+                          )
+                        : null,
                     color: _current == i
-                        ? Theme.of(context).colorScheme.primary
-                        : Theme.of(context).colorScheme.onSurfaceVariant,
+                        ? null
+                        : Theme.of(
+                            context,
+                          ).colorScheme.onSurfaceVariant.withValues(alpha: 0.3),
                     borderRadius: BorderRadius.circular(4),
                   ),
                 ),
               ),
             ),
+            const SizedBox(height: AppSpacing.sm),
           ],
         ],
       ),

@@ -12,14 +12,14 @@ abstract final class AppSpacing {
 
   // Card specific
   static const double cardPadding = lg;
-  static const double cardRadius = 12.0;
-  static const double cardElevation = 2.0;
+  static const double cardRadius = 16.0;
+  static const double cardElevation = 0.0;
 
   // Chip
-  static const double chipRadius = 20.0;
+  static const double chipRadius = 24.0;
 
   // Product thumbnail
-  static const double thumbnailSmall = 72.0;
+  static const double thumbnailSmall = 80.0;
   static const double thumbnailMedium = 120.0;
 
   // Tablet breakpoint

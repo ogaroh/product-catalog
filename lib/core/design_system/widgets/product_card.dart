@@ -177,12 +177,17 @@ class _DiscountBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.xs,
+        horizontal: AppSpacing.xs + 1,
         vertical: AppSpacing.xxs,
       ),
       decoration: BoxDecoration(
-        color: AppColors.discountBg,
-        borderRadius: BorderRadius.circular(AppSpacing.xs),
+        gradient: const LinearGradient(
+          colors: [
+            AppColors.discountGradientStart,
+            AppColors.discountGradientEnd,
+          ],
+        ),
+        borderRadius: BorderRadius.circular(AppSpacing.sm),
       ),
       child: Text(
         context.l10n.discountLabel(l10nPercent),

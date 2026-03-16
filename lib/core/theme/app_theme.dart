@@ -75,13 +75,16 @@ abstract final class AppTheme {
       // ── AppBar ───────────────────────────────────────────────
       appBarTheme: AppBarTheme(
         backgroundColor:
-            isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
+            isDark
+            ? AppColors.surfaceDark
+            : AppColors.backgroundLight,
         foregroundColor: colorScheme.onSurface,
         elevation: 0,
-        scrolledUnderElevation: 1,
+        scrolledUnderElevation: 0.5,
         centerTitle: false,
         titleTextStyle: AppTextStyles.headlineSmall.copyWith(
           color: colorScheme.onSurface,
+          fontWeight: FontWeight.w800,
         ),
       ),
 
@@ -89,11 +92,11 @@ abstract final class AppTheme {
       cardTheme: CardThemeData(
         color: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
         elevation: AppSpacing.cardElevation,
+        shadowColor: Colors.transparent,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSpacing.cardRadius),
           side: BorderSide(
             color: isDark ? AppColors.borderDark : AppColors.borderLight,
-            width: 0.5,
           ),
         ),
         margin: EdgeInsets.zero,
