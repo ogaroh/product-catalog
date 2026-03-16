@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 import 'app_spacing.dart';
 import 'app_text_styles.dart';
@@ -29,6 +30,10 @@ abstract final class AppTheme {
       outline: isDark ? AppColors.borderDark : AppColors.borderLight,
     );
 
+    final baseTextTheme = GoogleFonts.nunitoTextTheme(
+      isDark ? ThemeData.dark().textTheme : ThemeData.light().textTheme,
+    );
+
     return ThemeData(
       useMaterial3: true,
       brightness: brightness,
@@ -37,7 +42,7 @@ abstract final class AppTheme {
           isDark ? AppColors.backgroundDark : AppColors.backgroundLight,
 
       // ── Typography ──────────────────────────────────────────
-      textTheme: TextTheme(
+      textTheme: baseTextTheme.copyWith(
         headlineLarge: AppTextStyles.headlineLarge.copyWith(
           color: colorScheme.onSurface,
         ),
