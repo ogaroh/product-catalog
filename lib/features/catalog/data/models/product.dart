@@ -27,7 +27,9 @@ class Product {
   final double discountPercentage;
   final double rating;
   final int stock;
+  @JsonKey(defaultValue: '')
   final String brand;
+  @JsonKey(defaultValue: '')
   final String category;
   final String? thumbnail;
   final List<String> images;
