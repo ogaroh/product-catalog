@@ -63,5 +63,35 @@
   "escapedExample": "Bonjour ! '{N''est-ce pas}' une belle journée ?",
   "@escapedExample": {
     "description": "Un exemple de texte échappé avec des apostrophes"
-  }
+  },
+
+  "appTitle": "Catalogue de Produits",
+  "searchHint": "Rechercher des produits…",
+  "allCategories": "Tous",
+  "priceUnavailable": "Prix indisponible",
+  "unknownBrand": "Marque inconnue",
+  "uncategorized": "Non catégorisé",
+  "unknownProduct": "Produit inconnu",
+  "retryButton": "Réessayer",
+  "noResults": "Aucun produit trouvé",
+  "noResultsSubtitle": "Essayez d''ajuster votre recherche ou vos filtres.",
+  "cachedDataBanner": "Affichage des données en cache",
+  "offlineBanner": "Vous êtes hors ligne",
+  "stockLabel": "{count, plural, =0{Rupture de stock} =1{1 article restant} other{{count} en stock}}",
+  "@stockLabel": { "placeholders": { "count": { "type": "num" } } },
+  "ratingLabel": "Note : {value}",
+  "@ratingLabel": { "placeholders": { "value": { "type": "String" } } },
+  "brandLabel": "Marque : {brand}",
+  "@brandLabel": { "placeholders": { "brand": { "type": "String" } } },
+  "categoryLabel": "Catégorie : {category}",
+  "@categoryLabel": { "placeholders": { "category": { "type": "String" } } },
+  "discountLabel": "{percent}% de réduction",
+  "@discountLabel": { "placeholders": { "percent": { "type": "String" } } },
+  "imageGalleryLabel": "Images du produit",
+  "backButton": "Retour",
+  "showcaseTitle": "Vitrine du système de conception",
+  "productDetailTitle": "Détail du produit",
+  "productListTitle": "Produits",
+  "noProductSelected": "Sélectionnez un produit pour afficher les détails",
+  "loadingLabel": "Chargement…"
 }

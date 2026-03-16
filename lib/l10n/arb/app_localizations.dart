@@ -64,7 +64,7 @@ import 'app_localizations_fr.dart';
 /// property.
 abstract class AppLocalizations {
   AppLocalizations(String locale)
-      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -87,17 +87,17 @@ abstract class AppLocalizations {
   /// of delegates is preferred or required.
   static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
       <LocalizationsDelegate<dynamic>>[
-    delegate,
-    GlobalMaterialLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-  ];
+        delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
     Locale('es'),
-    Locale('fr')
+    Locale('fr'),
   ];
 
   /// Text shown in the AppBar of the Counter Page
@@ -147,6 +147,150 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Hello! \'{Isn\'\'t}\' this a wonderful day?'**
   String get escapedExample;
+
+  /// Main app title
+  ///
+  /// In en, this message translates to:
+  /// **'Product Catalog'**
+  String get appTitle;
+
+  /// Hint text in the search bar
+  ///
+  /// In en, this message translates to:
+  /// **'Search products…'**
+  String get searchHint;
+
+  /// Label for the 'All categories' chip
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get allCategories;
+
+  /// Shown when a product has no valid price
+  ///
+  /// In en, this message translates to:
+  /// **'Price unavailable'**
+  String get priceUnavailable;
+
+  /// Fallback brand name
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown Brand'**
+  String get unknownBrand;
+
+  /// Fallback category name
+  ///
+  /// In en, this message translates to:
+  /// **'Uncategorized'**
+  String get uncategorized;
+
+  /// Fallback product title
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown Product'**
+  String get unknownProduct;
+
+  /// Label on error retry button
+  ///
+  /// In en, this message translates to:
+  /// **'Try Again'**
+  String get retryButton;
+
+  /// Heading for empty state
+  ///
+  /// In en, this message translates to:
+  /// **'No products found'**
+  String get noResults;
+
+  /// Subtitle for empty state
+  ///
+  /// In en, this message translates to:
+  /// **'Try adjusting your search or filters.'**
+  String get noResultsSubtitle;
+
+  /// Banner shown when serving local cache
+  ///
+  /// In en, this message translates to:
+  /// **'Showing cached data'**
+  String get cachedDataBanner;
+
+  /// Shown when device has no network
+  ///
+  /// In en, this message translates to:
+  /// **'You are offline'**
+  String get offlineBanner;
+
+  /// Stock availability label
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{Out of stock} =1{1 item left} other{{count} in stock}}'**
+  String stockLabel(num count);
+
+  /// Accessibility label for ratings
+  ///
+  /// In en, this message translates to:
+  /// **'Rating: {value}'**
+  String ratingLabel(String value);
+
+  /// Product brand label
+  ///
+  /// In en, this message translates to:
+  /// **'Brand: {brand}'**
+  String brandLabel(String brand);
+
+  /// Product category label
+  ///
+  /// In en, this message translates to:
+  /// **'Category: {category}'**
+  String categoryLabel(String category);
+
+  /// Discount badge label
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% off'**
+  String discountLabel(String percent);
+
+  /// Accessibility label for image gallery
+  ///
+  /// In en, this message translates to:
+  /// **'Product images'**
+  String get imageGalleryLabel;
+
+  /// Back navigation button
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get backButton;
+
+  /// Title for the component showcase screen (dev only)
+  ///
+  /// In en, this message translates to:
+  /// **'Design System Showcase'**
+  String get showcaseTitle;
+
+  /// AppBar title for product detail
+  ///
+  /// In en, this message translates to:
+  /// **'Product Detail'**
+  String get productDetailTitle;
+
+  /// AppBar title for product list
+  ///
+  /// In en, this message translates to:
+  /// **'Products'**
+  String get productListTitle;
+
+  /// Right panel prompt on tablet when nothing is selected
+  ///
+  /// In en, this message translates to:
+  /// **'Select a product to view details'**
+  String get noProductSelected;
+
+  /// Generic loading message
+  ///
+  /// In en, this message translates to:
+  /// **'Loading…'**
+  String get loadingLabel;
 }
 
 class _AppLocalizationsDelegate
@@ -178,8 +322,9 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
   }
 
   throw FlutterError(
-      'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
-      'an issue with the localizations generation tool. Please file an issue '
-      'on GitHub with a reproducible sample app and the gen-l10n configuration '
-      'that was used.');
+    'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+    'an issue with the localizations generation tool. Please file an issue '
+    'on GitHub with a reproducible sample app and the gen-l10n configuration '
+    'that was used.',
+  );
 }

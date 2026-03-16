@@ -39,14 +39,11 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String pronoun(String gender) {
-    String _temp0 = intl.Intl.selectLogic(
-      gender,
-      {
-        'male': 'él',
-        'female': 'ella',
-        'other': 'elle',
-      },
-    );
+    String _temp0 = intl.Intl.selectLogic(gender, {
+      'male': 'él',
+      'female': 'ella',
+      'other': 'elle',
+    });
     return '$_temp0';
   }
 
@@ -69,4 +66,93 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get escapedExample => '¡Hola! {¿No es} un día maravilloso?';
+
+  @override
+  String get appTitle => 'Catálogo de Productos';
+
+  @override
+  String get searchHint => 'Buscar productos…';
+
+  @override
+  String get allCategories => 'Todos';
+
+  @override
+  String get priceUnavailable => 'Precio no disponible';
+
+  @override
+  String get unknownBrand => 'Marca desconocida';
+
+  @override
+  String get uncategorized => 'Sin categoría';
+
+  @override
+  String get unknownProduct => 'Producto desconocido';
+
+  @override
+  String get retryButton => 'Intentar de nuevo';
+
+  @override
+  String get noResults => 'No se encontraron productos';
+
+  @override
+  String get noResultsSubtitle => 'Intenta ajustar tu búsqueda o filtros.';
+
+  @override
+  String get cachedDataBanner => 'Mostrando datos en caché';
+
+  @override
+  String get offlineBanner => 'Estás sin conexión';
+
+  @override
+  String stockLabel(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count en stock',
+      one: '1 artículo restante',
+      zero: 'Sin stock',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String ratingLabel(String value) {
+    return 'Calificación: $value';
+  }
+
+  @override
+  String brandLabel(String brand) {
+    return 'Marca: $brand';
+  }
+
+  @override
+  String categoryLabel(String category) {
+    return 'Categoría: $category';
+  }
+
+  @override
+  String discountLabel(String percent) {
+    return '$percent% de descuento';
+  }
+
+  @override
+  String get imageGalleryLabel => 'Imágenes del producto';
+
+  @override
+  String get backButton => 'Atrás';
+
+  @override
+  String get showcaseTitle => 'Exhibición del sistema de diseño';
+
+  @override
+  String get productDetailTitle => 'Detalle del producto';
+
+  @override
+  String get productListTitle => 'Productos';
+
+  @override
+  String get noProductSelected => 'Selecciona un producto para ver detalles';
+
+  @override
+  String get loadingLabel => 'Cargando…';
 }

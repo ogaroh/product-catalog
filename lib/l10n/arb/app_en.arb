@@ -63,5 +63,102 @@
   "escapedExample": "Hello! '{Isn''t}' this a wonderful day?",
   "@escapedExample": {
     "description": "An example of escaped text with single quotes"
-  }
+  },
+
+  "appTitle": "Product Catalog",
+  "@appTitle": { "description": "Main app title" },
+
+  "searchHint": "Search products…",
+  "@searchHint": { "description": "Hint text in the search bar" },
+
+  "allCategories": "All",
+  "@allCategories": { "description": "Label for the 'All categories' chip" },
+
+  "priceUnavailable": "Price unavailable",
+  "@priceUnavailable": { "description": "Shown when a product has no valid price" },
+
+  "unknownBrand": "Unknown Brand",
+  "@unknownBrand": { "description": "Fallback brand name" },
+
+  "uncategorized": "Uncategorized",
+  "@uncategorized": { "description": "Fallback category name" },
+
+  "unknownProduct": "Unknown Product",
+  "@unknownProduct": { "description": "Fallback product title" },
+
+  "retryButton": "Try Again",
+  "@retryButton": { "description": "Label on error retry button" },
+
+  "noResults": "No products found",
+  "@noResults": { "description": "Heading for empty state" },
+
+  "noResultsSubtitle": "Try adjusting your search or filters.",
+  "@noResultsSubtitle": { "description": "Subtitle for empty state" },
+
+  "cachedDataBanner": "Showing cached data",
+  "@cachedDataBanner": { "description": "Banner shown when serving local cache" },
+
+  "offlineBanner": "You are offline",
+  "@offlineBanner": { "description": "Shown when device has no network" },
+
+  "stockLabel": "{count, plural, =0{Out of stock} =1{1 item left} other{{count} in stock}}",
+  "@stockLabel": {
+    "description": "Stock availability label",
+    "placeholders": {
+      "count": { "type": "num" }
+    }
+  },
+
+  "ratingLabel": "Rating: {value}",
+  "@ratingLabel": {
+    "description": "Accessibility label for ratings",
+    "placeholders": {
+      "value": { "type": "String" }
+    }
+  },
+
+  "brandLabel": "Brand: {brand}",
+  "@brandLabel": {
+    "description": "Product brand label",
+    "placeholders": {
+      "brand": { "type": "String" }
+    }
+  },
+
+  "categoryLabel": "Category: {category}",
+  "@categoryLabel": {
+    "description": "Product category label",
+    "placeholders": {
+      "category": { "type": "String" }
+    }
+  },
+
+  "discountLabel": "{percent}% off",
+  "@discountLabel": {
+    "description": "Discount badge label",
+    "placeholders": {
+      "percent": { "type": "String" }
+    }
+  },
+
+  "imageGalleryLabel": "Product images",
+  "@imageGalleryLabel": { "description": "Accessibility label for image gallery" },
+
+  "backButton": "Back",
+  "@backButton": { "description": "Back navigation button" },
+
+  "showcaseTitle": "Design System Showcase",
+  "@showcaseTitle": { "description": "Title for the component showcase screen (dev only)" },
+
+  "productDetailTitle": "Product Detail",
+  "@productDetailTitle": { "description": "AppBar title for product detail" },
+
+  "productListTitle": "Products",
+  "@productListTitle": { "description": "AppBar title for product list" },
+
+  "noProductSelected": "Select a product to view details",
+  "@noProductSelected": { "description": "Right panel prompt on tablet when nothing is selected" },
+
+  "loadingLabel": "Loading…",
+  "@loadingLabel": { "description": "Generic loading message" }
 }
