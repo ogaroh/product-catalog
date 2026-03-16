@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:product_catalog/flavors.dart';
 import 'package:product_catalog/l10n/l10n.dart';
 import 'package:flutter/services.dart';
 
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(title: 'Product Catalog'),
       builder: (context, child) {
         return Banner(
-          message: 'Codika',
+          message: F.appFlavor?.name ?? 'Dev',
           location: BannerLocation.topEnd,
           color: pinkColor,
           shadow: const BoxShadow(
