@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'api_endpoints.dart';
 
@@ -36,8 +38,7 @@ class _LoggingInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     assert(() {
-      // ignore: avoid_print
-      print('[DioClient] → ${options.method} ${options.uri}');
+      log('[DioClient] → ${options.method} ${options.uri}');
       return true;
     }());
     handler.next(options);
@@ -46,8 +47,7 @@ class _LoggingInterceptor extends Interceptor {
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) {
     assert(() {
-      // ignore: avoid_print
-      print('[DioClient] ✗ ${err.type}: ${err.message}');
+      log('[DioClient] ✗ ${err.type}: ${err.message}');
       return true;
     }());
     handler.next(err);
