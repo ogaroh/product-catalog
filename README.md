@@ -140,10 +140,10 @@ UI → Cubit → Repository → RemoteSource (Dio) → DummyJSON API
 
 ## AI Tools Usage
 
-GitHub Copilot (Claude Sonnet 4.6) was used throughout this project:
+GitHub Copilot, Claude & Codex were used throughout this project for different purposes:
 - **Planning phase** — generated the full architecture plan (folder structure, component APIs, state classes, phased implementation order)
 - **Scaffolding** — generated boilerplate for cubits, repository, data sources, and design system components
 - **Test generation** — generated unit test skeletons; two tests caught a real bug (null `brand`/`category` in `_$ProductFromJson`) that required adding `@JsonKey(defaultValue: '')` annotations and regenerating code
-- **All generated output** was reviewed, and incorrect path assumptions, state machine edge cases, and the `hive_generator` version conflict were identified and fixed manually
+- **All generated output** was thoroughly reviewed, potential issues identified and fixed manually in a well-supervised manner
 
 
