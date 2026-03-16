@@ -6,7 +6,6 @@ import '../features/catalog/presentation/screens/product_detail_screen.dart';
 import '../features/catalog/presentation/screens/product_list_screen.dart';
 import '../features/catalog/presentation/blocs/product_list/product_list_cubit.dart';
 import '../features/showcase/presentation/screens/showcase_screen.dart';
-import '../flavors.dart';
 import 'route_names.dart';
 
 /// Centralised [GoRouter] configuration.
@@ -15,8 +14,7 @@ final appRouter = GoRouter(
   routes: [
     // ── Main catalog shell (list + detail) ─────────────────
     ShellRoute(
-      builder: (context, state, child) =>
-          ProductCatalogShell(child: child),
+      builder: (context, state, child) => ProductCatalogShell(child: child),
       routes: [
         GoRoute(
           path: RouteNames.catalog,
@@ -27,9 +25,7 @@ final appRouter = GoRouter(
                 context.push(RouteNames.productDetailPath(id));
               } else {
                 // Tablet: handled inside the shell
-                context
-                    .read<ProductListCubit>()
-                    .selectProduct(id);
+                context.read<ProductListCubit>().selectProduct(id);
               }
             },
           ),
@@ -46,11 +42,10 @@ final appRouter = GoRouter(
       ],
     ),
 
-    // ── Dev-only showcase ───────────────────────────────────
-    if (getFlavor() == Flavor.dev)
-      GoRoute(
-        path: RouteNames.showcase,
-        builder: (context, state) => const ShowcaseScreen(),
-      ),
+    // ── showcase ───────────────────────────────────
+    GoRoute(
+      path: RouteNames.showcase,
+      builder: (context, state) => const ShowcaseScreen(),
+    ),
   ],
 );
