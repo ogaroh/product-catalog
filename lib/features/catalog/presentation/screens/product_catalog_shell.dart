@@ -76,12 +76,14 @@ class _TabletLayout extends StatelessWidget {
             // ── Right panel: detail ────────────────────────────
             Expanded(
               child: selectedId != null
-                  ? BlocProvider(
-                      key: ValueKey(selectedId),
-                      create: (_) => ProductDetailCubit(
-                        repository: repository,
-                      )..loadProduct(selectedId),
-                      child: ProductDetailContent(productId: selectedId),
+                  ? Scaffold(
+                      body: BlocProvider(
+                        key: ValueKey(selectedId),
+                        create: (_) =>
+                            ProductDetailCubit(repository: repository)
+                              ..loadProduct(selectedId),
+                        child: ProductDetailContent(productId: selectedId),
+                      ),
                     )
                   : Center(
                       child: Text(
