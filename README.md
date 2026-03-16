@@ -37,11 +37,11 @@ flutter run --flavor prod -t lib/main_prod.dart
 flutter test
 ```
 
-### Deep link (dev/simulator)
+### Deep links
 
 ```
 /products/:id   — Product detail
-/showcase       — Component showcase (dev flavor only)
+/showcase       — Component showcase
 ```
 
 ---
