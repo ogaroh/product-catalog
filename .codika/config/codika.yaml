@@ -1,0 +1,22 @@
+projectName: product_catalog
+appName: Product Catalog
+organisationName: dev.ogaroh
+git: true
+gitRemoteUrl: "git@github.com:ogaroh/product-catalog.git"
+starterProject: flutter_starter
+environments: 
+  - dev
+  - prod
+  - stag
+
+components: 
+  - core_app_icon
+  - core_splash_screen
+  - core_localizations
+
+params: 
+  flutter_version: 3.27.4
+  app_name: Product Catalog
+
+executors: 
+  - android_configurations
